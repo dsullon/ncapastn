@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Tienda.Core.Producto>
+@{
+    ViewBag.Title = "Listar";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="page-header">Listado de Productos</h2>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <td>Nombre</td>
+            <td>Marca</td>
+            <td>Precio</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(item.Nombre, "editar", new { id = item.IdProducto})</td>
+                <td>@item.Marca</td>
+                <td>@item.Precio</td>
+            </tr>
+        }
+    </tbody>
+</table>

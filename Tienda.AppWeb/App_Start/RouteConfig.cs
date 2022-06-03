@@ -14,6 +14,18 @@ namespace Tienda.AppWeb
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "productos",
+                url: "admin/productos",
+                defaults: new { controller = "Producto", action = "Listar" }
+            );
+
+            routes.MapRoute(
+                name: "clientes",
+                url: "admin/clientes",
+                defaults: new { controller = "Cliente", action = "Index" }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

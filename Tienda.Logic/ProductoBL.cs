@@ -17,5 +17,13 @@ namespace Tienda.Logic
                 return db.Producto.ToList();
             }
         }
+
+        public static Producto ObtenerPorId(int id)
+        {
+            using(var db = new TiendaEntities())
+            {
+                return db.Producto.Find(id);
+            }
+        }
     }
 }
