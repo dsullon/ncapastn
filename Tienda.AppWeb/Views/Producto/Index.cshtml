@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Tienda.Core.Producto>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Nuestros Productos</h2>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4">
+            <h2>@item.Nombre</h2>
+            <p>@item.Marca</p>
+            <p>@item.Precio</p>
+        </div>
+    }
+
+</div>
